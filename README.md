@@ -1,26 +1,27 @@
-# 3D Rotating Tetracube (Java Prototype)
+# 3D Rotating Tetracube (Java Windowed Prototype)
 
-This repository now contains a playable Java console prototype of the 3D rotating falling-block concept.
+This project now runs as a **windowed Java game** (Swing), not a command-line-only demo.
 
-## What is implemented
+## What's included
 
-- `6 x 12 x 6` voxel board.
-- Curated tetracube piece set.
-- One-side-at-a-time projection-style rendering in text.
+- Separate visual game window (`JFrame`) with real-time rendering.
+- 2D orthographic projection of a 3D voxel stack (`6 x 12 x 6`).
+- Depth-shaded blocks so front/deeper occupancy is readable.
+- Curated tetracube piece set and rotation controls.
 - Gravity rotation event every 8 locked pieces.
-- Full-layer clearing perpendicular to current gravity.
-- Re-settle simulation after each rotation (including chain clears).
-- Layer-fill meters and a text x-ray pulse command.
+- Full layer clear perpendicular to gravity + post-rotation re-settle.
+- Layer fill meters and optional x-ray panel.
 
 ## Controls
 
-- `a` / `d` : move left / right in the current projected view.
-- `s` : soft drop.
-- `w` : hard drop.
-- `q` / `e` : rotate in plane.
-- `z` / `c` : roll around depth axis.
-- `x` : print x-ray slice readout.
-- `p` : quit.
+- `Left` / `Right` : move piece horizontally in current face.
+- `Down` : soft drop.
+- `Space` : hard drop.
+- `Z` / `X` : rotate in-plane.
+- `A` / `S` : roll around depth axis.
+- `V` : toggle x-ray overlay.
+- `P` : pause/unpause.
+- `R` : restart after game over.
 
 ## Run
 
@@ -29,6 +30,4 @@ javac src/main/java/Main.java
 java -cp src/main/java Main
 ```
 
-## Notes
-
-This is intentionally a **console vertical-slice prototype** focused on mechanics and rules. It does not include a graphics engine, audio, menus, or persistence.
+> Requires a Java environment with Swing (standard JDK desktop runtime).
